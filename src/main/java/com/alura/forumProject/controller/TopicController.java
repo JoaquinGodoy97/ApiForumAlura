@@ -2,6 +2,7 @@ package com.alura.forumProject.controller;
 
 import com.alura.forumProject.model.Topic;
 import com.alura.forumProject.service.TopicService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
 
 import org.springframework.data.domain.Page;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("v1/topic/")
+@SecurityRequirement(name = "bearer-key")
 public class TopicController {
 
     private final TopicService topicService;
